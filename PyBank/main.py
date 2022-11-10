@@ -13,7 +13,7 @@ max_position=0
 min_position=0
 
 # Python file and csv file stay in the same folder for ease of access
-filepath=os.path.join("budget_data.csv")
+filepath=os.path.join("Resources","budget_data.csv")
 
 with open(filepath,'r') as datafile:
     datafilereader=csv.reader(datafile,delimiter=",")
@@ -58,7 +58,8 @@ with open(filepath,'r') as datafile:
     print(f"Greatest decrease in Profits: {month_date[min_position+1]} (${min_decrease:,})")
 
 # w+ option allows create and write to a txt at the same time. Other option can be create a path to result txt file then use w instead of w+
-with open('result.txt','w+') as result:
+resultpath=os.path.join("Analysis","result.txt")
+with open(resultpath,'w') as result:
     result.write("Financial Analysis \n ----------------------------------------------------- \n")
     result.write("Total Months: " + str(month))
     result.write("\nTotal: $"+str("{:,}".format(amount)))
