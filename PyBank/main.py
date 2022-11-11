@@ -57,7 +57,7 @@ with open(filepath,'r') as datafile:
     print(f"Greatest increase in Profits: {month_date[max_position+1]} (${max_increase:,})")
     print(f"Greatest decrease in Profits: {month_date[min_position+1]} (${min_decrease:,})")
 
-# w+ option allows create and write to a txt at the same time. Other option can be create a path to result txt file then use w instead of w+
+# Write result to txt file
 resultpath=os.path.join("Analysis","result.txt")
 with open(resultpath,'w') as result:
     result.write("Financial Analysis \n ----------------------------------------------------- \n")
